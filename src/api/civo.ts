@@ -1,6 +1,6 @@
 // Check for API key
 export const CIVO_API_KEY = process.env.CIVO_API_KEY!;
-if (!CIVO_API_KEY) {
+if (!CIVO_API_KEY && process.env.NODE_ENV !== 'test') {
   console.error("Error: CIVO_API_KEY environment variable is required");
   process.exit(1);
 }
