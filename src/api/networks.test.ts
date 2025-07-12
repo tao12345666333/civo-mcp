@@ -1,4 +1,9 @@
-import { listNetworks, createNetwork, renameNetwork, deleteNetwork } from './networks.js';
+import {
+  listNetworks,
+  createNetwork,
+  renameNetwork,
+  deleteNetwork,
+} from './networks.js';
 import { CIVO_API_URL } from './civo.js';
 
 jest.mock('./civo', () => ({
@@ -21,7 +26,10 @@ describe('Networks API', () => {
     });
 
     const result = await listNetworks();
-    expect(fetch).toHaveBeenCalledWith(`${CIVO_API_URL}/networks`, expect.any(Object));
+    expect(fetch).toHaveBeenCalledWith(
+      `${CIVO_API_URL}/networks`,
+      expect.any(Object)
+    );
     expect(result).toEqual(mockData);
   });
 
@@ -35,7 +43,10 @@ describe('Networks API', () => {
     const params = { label: 'test-network' };
     const result = await createNetwork(params);
 
-    expect(fetch).toHaveBeenCalledWith(`${CIVO_API_URL}/networks`, expect.any(Object));
+    expect(fetch).toHaveBeenCalledWith(
+      `${CIVO_API_URL}/networks`,
+      expect.any(Object)
+    );
     expect(result).toEqual(mockData);
   });
 
@@ -49,10 +60,13 @@ describe('Networks API', () => {
     const params = { id: '1', label: 'new-name', region: 'lon1' };
     const result = await renameNetwork(params);
 
-    expect(fetch).toHaveBeenCalledWith(`${CIVO_API_URL}/networks/1`, expect.objectContaining({ 
-      method: 'PUT',
-      body: expect.any(String)
-    }));
+    expect(fetch).toHaveBeenCalledWith(
+      `${CIVO_API_URL}/networks/1`,
+      expect.objectContaining({
+        method: 'PUT',
+        body: expect.any(String),
+      })
+    );
     expect(result).toEqual(mockResponse);
   });
 
@@ -69,7 +83,10 @@ describe('Networks API', () => {
     const expectedUrl = new URL(`${CIVO_API_URL}/networks/1`);
     expectedUrl.searchParams.set('region', 'lon1');
 
-    expect(fetch).toHaveBeenCalledWith(expectedUrl.toString(), expect.objectContaining({ method: 'DELETE' }));
+    expect(fetch).toHaveBeenCalledWith(
+      expectedUrl.toString(),
+      expect.objectContaining({ method: 'DELETE' })
+    );
     expect(result).toEqual(mockResponse);
   });
 });

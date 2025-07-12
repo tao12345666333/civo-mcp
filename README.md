@@ -40,8 +40,8 @@ node dist/index.js
 
 ### Using Docker
 ```bash
-docker pull tao12345666333/civo-mcp:latest
-docker run -e CIVO_API_KEY="your_api_key_here" tao12345666333/civo-mcp:latest
+docker pull ghcr.io/tao12345666333/civo-mcp-standalone:latest
+docker run -e CIVO_API_KEY="your_api_key_here" ghcr.io/tao12345666333/civo-mcp-standalone:latest
 ```
 
 ## Features
@@ -197,7 +197,7 @@ CIVO_API_KEY="your_api_key_here" node dist/index.js
 ### Usage with Docker
 Run the server using Docker:
 ```bash
-docker run -e CIVO_API_KEY="your_api_key_here" tao12345666333/civo-mcp:latest
+docker run -e CIVO_API_KEY="your_api_key_here" ghcr.io/tao12345666333/civo-mcp-standalone:latest
 ```
 
 ### Usage with Claude Desktop

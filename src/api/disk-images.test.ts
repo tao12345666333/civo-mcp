@@ -21,7 +21,10 @@ describe('Disk Images API', () => {
     });
 
     const result = await listDiskImages({});
-    expect(fetch).toHaveBeenCalledWith(`${CIVO_API_URL}/disk_images`, expect.any(Object));
+    expect(fetch).toHaveBeenCalledWith(
+      `${CIVO_API_URL}/disk_images`,
+      expect.any(Object)
+    );
     expect(result).toEqual({ items: mockData });
   });
 
@@ -38,7 +41,10 @@ describe('Disk Images API', () => {
     const expectedUrl = new URL(`${CIVO_API_URL}/disk_images/1`);
     expectedUrl.searchParams.set('region', 'lon1');
 
-    expect(fetch).toHaveBeenCalledWith(expectedUrl.toString(), expect.any(Object));
+    expect(fetch).toHaveBeenCalledWith(
+      expectedUrl.toString(),
+      expect.any(Object)
+    );
     expect(result).toEqual(mockData);
   });
 });

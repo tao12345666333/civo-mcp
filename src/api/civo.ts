@@ -1,23 +1,25 @@
 // Check for API key
-export const CIVO_API_KEY = process.env.CIVO_API_KEY || (process.env.NODE_ENV === 'test' ? 'test-api-key' : '');
+export const CIVO_API_KEY =
+  process.env.CIVO_API_KEY ||
+  (process.env.NODE_ENV === 'test' ? 'test-api-key' : '');
 if (!CIVO_API_KEY) {
-  console.error("Error: CIVO_API_KEY environment variable is required");
+  console.error('Error: CIVO_API_KEY environment variable is required');
   process.exit(1);
 }
 
 // Civo API base URL
-export const CIVO_API_URL = "https://api.civo.com/v2";
+export const CIVO_API_URL = 'https://api.civo.com/v2';
 
 // Rate limiting configuration
 const RATE_LIMIT = {
   perSecond: 1,
-  perMonth: 15000
+  perMonth: 15000,
 };
 
-let requestCount = {
+const requestCount = {
   second: 0,
   month: 0,
-  lastReset: Date.now()
+  lastReset: Date.now(),
 };
 
 export function checkRateLimit() {
@@ -26,8 +28,10 @@ export function checkRateLimit() {
     requestCount.second = 0;
     requestCount.lastReset = now;
   }
-  if (requestCount.second >= RATE_LIMIT.perSecond ||
-    requestCount.month >= RATE_LIMIT.perMonth) {
+  if (
+    requestCount.second >= RATE_LIMIT.perSecond ||
+    requestCount.month >= RATE_LIMIT.perMonth
+  ) {
     throw new Error('Rate limit exceeded');
   }
   requestCount.second++;

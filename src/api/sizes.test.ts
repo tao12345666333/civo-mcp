@@ -21,7 +21,10 @@ describe('Sizes API', () => {
     });
 
     const result = await listSizes();
-    expect(fetch).toHaveBeenCalledWith(`${CIVO_API_URL}/sizes`, expect.any(Object));
+    expect(fetch).toHaveBeenCalledWith(
+      `${CIVO_API_URL}/sizes`,
+      expect.any(Object)
+    );
     expect(result).toEqual(mockData);
   });
 });

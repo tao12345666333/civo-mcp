@@ -21,7 +21,10 @@ describe('Regions API', () => {
     });
 
     const result = await listRegions();
-    expect(fetch).toHaveBeenCalledWith(`${CIVO_API_URL}/regions`, expect.any(Object));
+    expect(fetch).toHaveBeenCalledWith(
+      `${CIVO_API_URL}/regions`,
+      expect.any(Object)
+    );
     expect(result).toEqual(mockData);
   });
 });

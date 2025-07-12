@@ -1,4 +1,9 @@
-import { listClusters, createCluster, deleteCluster, listAvailableVersions } from './kubernetes.js';
+import {
+  listClusters,
+  createCluster,
+  deleteCluster,
+  listAvailableVersions,
+} from './kubernetes.js';
 import { CIVO_API_URL } from './civo.js';
 
 jest.mock('./civo', () => ({
@@ -21,7 +26,10 @@ describe('Kubernetes API', () => {
     });
 
     const result = await listClusters({});
-    expect(fetch).toHaveBeenCalledWith(`${CIVO_API_URL}/kubernetes/clusters`, expect.any(Object));
+    expect(fetch).toHaveBeenCalledWith(
+      `${CIVO_API_URL}/kubernetes/clusters`,
+      expect.any(Object)
+    );
     expect(result).toEqual(mockData);
   });
 
@@ -32,10 +40,20 @@ describe('Kubernetes API', () => {
       json: () => Promise.resolve(mockData),
     });
 
-    const params = { name: 'test-cluster', region: 'lon1', network_id: '123', nodes: 1, node_size: 'g2.small', kubernetes_version: '1.23.5' };
+    const params = {
+      name: 'test-cluster',
+      region: 'lon1',
+      network_id: '123',
+      nodes: 1,
+      node_size: 'g2.small',
+      kubernetes_version: '1.23.5',
+    };
     const result = await createCluster(params);
 
-    expect(fetch).toHaveBeenCalledWith(`${CIVO_API_URL}/kubernetes/clusters`, expect.any(Object));
+    expect(fetch).toHaveBeenCalledWith(
+      `${CIVO_API_URL}/kubernetes/clusters`,
+      expect.any(Object)
+    );
     expect(result).toEqual(mockData);
   });
 
@@ -52,7 +70,10 @@ describe('Kubernetes API', () => {
     const expectedUrl = new URL(`${CIVO_API_URL}/kubernetes/clusters/1`);
     expectedUrl.searchParams.set('region', 'lon1');
 
-    expect(fetch).toHaveBeenCalledWith(expectedUrl.toString(), expect.objectContaining({ method: 'DELETE' }));
+    expect(fetch).toHaveBeenCalledWith(
+      expectedUrl.toString(),
+      expect.objectContaining({ method: 'DELETE' })
+    );
     expect(result).toEqual(mockResponse);
   });
 
@@ -64,7 +85,10 @@ describe('Kubernetes API', () => {
     });
 
     const result = await listAvailableVersions();
-    expect(fetch).toHaveBeenCalledWith(`${CIVO_API_URL}/kubernetes/versions`, expect.any(Object));
+    expect(fetch).toHaveBeenCalledWith(
+      `${CIVO_API_URL}/kubernetes/versions`,
+      expect.any(Object)
+    );
     expect(result).toEqual(mockData);
   });
 });

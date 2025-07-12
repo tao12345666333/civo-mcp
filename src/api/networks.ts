@@ -1,4 +1,4 @@
-import { CIVO_API_KEY, CIVO_API_URL } from "./civo.js";
+import { CIVO_API_KEY, CIVO_API_URL } from './civo.js';
 
 export interface Network {
   id: string;
@@ -12,7 +12,7 @@ export async function listNetworks(): Promise<Network[]> {
   const url = `${CIVO_API_URL}/networks`;
   const response = await fetch(url, {
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
       Authorization: `Bearer ${CIVO_API_KEY}`,
     },
   });
@@ -30,9 +30,9 @@ export async function createNetwork(params: {
 }): Promise<any> {
   const url = `${CIVO_API_URL}/networks`;
   const response = await fetch(url, {
-    method: "POST",
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
       Authorization: `Bearer ${CIVO_API_KEY}`,
     },
     body: JSON.stringify(params),
@@ -52,9 +52,9 @@ export async function renameNetwork(params: {
 }): Promise<any> {
   const url = `${CIVO_API_URL}/networks/${params.id}`;
   const response = await fetch(url, {
-    method: "PUT",
+    method: 'PUT',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
       Authorization: `Bearer ${CIVO_API_KEY}`,
     },
     body: JSON.stringify({ label: params.label, region: params.region }),
@@ -72,12 +72,12 @@ export async function deleteNetwork(params: {
   region: string;
 }): Promise<any> {
   const url = new URL(`${CIVO_API_URL}/networks/${params.id}`);
-  url.searchParams.set("region", params.region);
+  url.searchParams.set('region', params.region);
 
   const response = await fetch(url.toString(), {
-    method: "DELETE",
+    method: 'DELETE',
     headers: {
-      "Authorization": `Bearer ${CIVO_API_KEY}`
+      Authorization: `Bearer ${CIVO_API_KEY}`,
     },
   });
 

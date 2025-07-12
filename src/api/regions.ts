@@ -1,4 +1,4 @@
-import { CIVO_API_KEY, CIVO_API_URL } from "./civo.js";
+import { CIVO_API_KEY, CIVO_API_URL } from './civo.js';
 
 export interface Region {
   code: string;
@@ -12,7 +12,7 @@ export async function listRegions(): Promise<Region[]> {
   const url = `${CIVO_API_URL}/regions`;
   const response = await fetch(url, {
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
       Authorization: `Bearer ${CIVO_API_KEY}`,
     },
   });

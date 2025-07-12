@@ -1,0 +1,48 @@
+# Node modules
+node_modules/
+npm-debug.log*
+
+# Test coverage
+coverage/
+
+# Build artifacts (keep dist/ as it's needed)
+# dist/
+
+# Development files
+.env.local
+.env.development
+.env.test
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Documentation
+README.md
+TESTING.md
+CHANGELOG.md
+CONTRIBUTING.md
+
+# CI/CD
+.github/
+
+# Scripts
+scripts/
+
+# API spec (if not needed in container)
+api-spec/
+
+# Test files
+**/*.test.js
+**/*.test.ts
+**/__tests__/

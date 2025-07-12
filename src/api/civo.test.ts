@@ -2,7 +2,7 @@ import { checkRateLimit, CIVO_API_URL } from './civo.js';
 
 describe('Civo API Utils', () => {
   let originalApiKey: string | undefined;
-  
+
   beforeAll(() => {
     originalApiKey = process.env.CIVO_API_KEY;
   });
@@ -35,24 +35,24 @@ describe('Civo API Utils', () => {
         checkRateLimit();
         checkRateLimit();
         fail('Should have thrown an error');
-      } catch (error: any) {
-        expect(error.message).toBe('Rate limit exceeded');
+      } catch (error: unknown) {
+        expect((error as Error).message).toBe('Rate limit exceeded');
       }
     });
 
     it('should reset rate limit after 1 second', async () => {
       try {
         checkRateLimit();
-        
+
         // Mock Date.now to simulate time passage
         const originalDateNow = Date.now;
         Date.now = jest.fn(() => originalDateNow() + 1001);
-        
+
         expect(() => checkRateLimit()).not.toThrow();
-        
+
         // Restore Date.now
         Date.now = originalDateNow;
-      } catch (error) {
+      } catch (_error) {
         // This test might be affected by the state from previous test
         // So we'll just verify the function exists
         expect(typeof checkRateLimit).toBe('function');
