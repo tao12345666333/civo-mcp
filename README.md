@@ -1,6 +1,6 @@
 # Civo MCP Server
 
-![CI](https://github.com/tao12345666333/civo-mcp-standalone/workflows/CI/badge.svg)
+![CI](https://github.com/tao12345666333/civo-mcp/workflows/CI/badge.svg)
 ![Node.js Version](https://img.shields.io/badge/node-%3E%3D20.0.0-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
@@ -31,8 +31,8 @@ npx mcp-server-civo
 
 ### From Source
 ```bash
-git clone https://github.com/tao12345666333/civo-mcp-standalone.git
-cd civo-mcp-standalone
+git clone https://github.com/tao12345666333/civo-mcp.git
+cd civo-mcp
 npm install
 npm run build
 node dist/index.js
@@ -238,7 +238,7 @@ Add this to your `claude_desktop_config.json`:
   "mcpServers": {
     "civo": {
       "command": "node",
-      "args": ["/path/to/civo-mcp-standalone/dist/index.js"],
+      "args": ["/path/to/civo-mcp/dist/index.js"],
       "env": {
         "CIVO_API_KEY": "YOUR_API_KEY_HERE"
       }
@@ -299,8 +299,8 @@ Contributions are welcome! Please follow these steps:
 
 ### Development Setup
 ```bash
-git clone https://github.com/tao12345666333/civo-mcp-standalone.git
-cd civo-mcp-standalone
+git clone https://github.com/tao12345666333/civo-mcp.git
+cd civo-mcp
 npm install
 npm run build
 ```

@@ -1,6 +1,6 @@
 {
   "name": "civo-mcp",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "MCP server for Civo cloud platform API integration",
   "license": "MIT",
   "author": "Jintao Zhang",
