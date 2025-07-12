@@ -52,7 +52,8 @@ describe('Civo API Utils', () => {
 
         // Restore Date.now
         Date.now = originalDateNow;
-      } catch (_error) {
+      } catch {
+        // Ignore error for this test
         // This test might be affected by the state from previous test
         // So we'll just verify the function exists
         expect(typeof checkRateLimit).toBe('function');
