@@ -1,5 +1,5 @@
-import { createInstance, listInstances, rebootInstance, shutdownInstance, startInstance, resizeInstance, deleteInstance } from './instances';
-import { CIVO_API_URL } from './civo';
+import { createInstance, listInstances, rebootInstance, shutdownInstance, startInstance, resizeInstance, deleteInstance } from './instances.js';
+import { CIVO_API_URL } from './civo.js';
 
 jest.mock('./civo', () => ({
   ...jest.requireActual('./civo'),

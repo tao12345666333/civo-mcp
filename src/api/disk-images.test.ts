@@ -1,5 +1,5 @@
-import { listDiskImages, getDiskImage } from './disk-images';
-import { CIVO_API_URL } from './civo';
+import { listDiskImages, getDiskImage } from './disk-images.js';
+import { CIVO_API_URL } from './civo.js';
 
 jest.mock('./civo', () => ({
   ...jest.requireActual('./civo'),

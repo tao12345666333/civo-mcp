@@ -1,4 +1,4 @@
-import { checkRateLimit, CIVO_API_URL } from './civo';
+import { checkRateLimit, CIVO_API_URL } from './civo.js';
 
 describe('Civo API Utils', () => {
   let originalApiKey: string | undefined;

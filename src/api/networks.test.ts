@@ -1,5 +1,5 @@
-import { listNetworks, createNetwork, renameNetwork, deleteNetwork } from './networks';
-import { CIVO_API_URL } from './civo';
+import { listNetworks, createNetwork, renameNetwork, deleteNetwork } from './networks.js';
+import { CIVO_API_URL } from './civo.js';
 
 jest.mock('./civo', () => ({
   ...jest.requireActual('./civo'),

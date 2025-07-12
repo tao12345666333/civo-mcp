@@ -1,5 +1,5 @@
-import { listClusters, createCluster, deleteCluster, listAvailableVersions } from './kubernetes';
-import { CIVO_API_URL } from './civo';
+import { listClusters, createCluster, deleteCluster, listAvailableVersions } from './kubernetes.js';
+import { CIVO_API_URL } from './civo.js';
 
 jest.mock('./civo', () => ({
   ...jest.requireActual('./civo'),
