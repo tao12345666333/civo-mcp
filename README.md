@@ -1,7 +1,7 @@
 # Civo MCP Server
 
 ![CI](https://github.com/tao12345666333/civo-mcp-standalone/workflows/CI/badge.svg)
-![Node.js Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen)
+![Node.js Version](https://img.shields.io/badge/node-%3E%3D20.0.0-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
 An MCP server implementation that integrates with the Civo cloud platform API, providing capabilities to manage cloud instances, networks, and Kubernetes clusters.

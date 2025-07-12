@@ -45,12 +45,11 @@
     "test:ci": "npm run build && NODE_ENV=test jest --ci --coverage --watchAll=false dist/"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.0.1",
-    "dotenv": "^17.2.0",
-    "node-fetch": "^3.3.2"
+    "dotenv": "^17.2.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.28.0",
