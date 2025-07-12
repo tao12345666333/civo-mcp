@@ -32,6 +32,8 @@ jobs:
     
     - name: Run tests
       run: npm run test:ci
+      env:
+        CIVO_API_KEY: ${{ secrets.CIVO_API_KEY }}
     
     - name: Build project
       run: npm run build --if-present
