@@ -1,0 +1,8 @@
+{
+  "mcp_servers": [
+    {
+      "name": "civo",
+      "command": ["/home/tao/go/src/github.com/tao12345666333/civo-mcp-standalone/dist/index.js"]
+    }
+  ]
+}

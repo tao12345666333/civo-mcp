@@ -1,0 +1,54 @@
+{
+  "name": "civo-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for Civo cloud platform API integration",
+  "license": "MIT",
+  "author": "Jintao Zhang",
+  "homepage": "https://github.com/tao12345666333/civo-mcp",
+  "bugs": "https://github.com/tao12345666333/civo-mcp/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tao12345666333/civo-mcp.git"
+  },
+  "funding": "https://github.com/tao12345666333",
+  "keywords": [
+    "civo",
+    "mcp",
+    "cloud",
+    "api",
+    "server"
+  ],
+  "type": "module",
+  "bin": {
+    "mcp-server-civo": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "node dist/index.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:ci": "jest --ci --coverage --watchAll=false"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.0.1",
+    "dotenv": "^17.2.0",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.28.0",
+    "@babel/preset-typescript": "^7.27.1",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^22",
+    "babel-jest": "^30.0.4",
+    "jest": "^30.0.4",
+    "shx": "^0.3.4",
+    "ts-jest": "^29.4.0",
+    "typescript": "^5.6.2"
+  }
+}
