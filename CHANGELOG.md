@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.5] - 2025-01-12
+
+### Fixed
+- Fixed CI/CD issues with npm prepare script causing build failures
+- Corrected Docker action version inconsistency in release workflow
+- Changed `prepare` script to `prepublishOnly` to avoid CI conflicts
+
+### Changed
+- Improved release workflow stability
+
 ## [0.1.4] - 2025-01-12
 
 ### Added
