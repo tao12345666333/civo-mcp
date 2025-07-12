@@ -1,10 +1,12 @@
 # Civo MCP Server
 
+[![Civo](https://www.civo.com/brand-assets/logo/full-colour/civo-logo-fullcolour.png)](https://www.civo.com)
+
 ![CI](https://github.com/tao12345666333/civo-mcp/workflows/CI/badge.svg)
 ![Node.js Version](https://img.shields.io/badge/node-%3E%3D20.0.0-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
-An MCP server implementation that integrates with the Civo cloud platform API, providing capabilities to manage cloud instances, networks, and Kubernetes clusters.
+An MCP server implementation that integrates with the [Civo cloud platform](https://www.civo.com) API, providing capabilities to manage cloud instances, networks, and Kubernetes clusters.
 
 ## Installation
 
@@ -184,7 +186,7 @@ docker run -e CIVO_API_KEY="your_api_key_here" ghcr.io/tao12345666333/civo-mcp:l
 
 ### Getting an API Key
 1. Sign up for a [Civo account](https://dashboard.civo.com/signup) if you don't have one.
-2. Generate your API key from the [API settings page](https://dashboard.civo.com/security)
+2. Generate your API key following the [API keys documentation](https://www.civo.com/docs/account/api-keys)
 
 ### Usage as a Standalone Server
 Install dependencies and run the server:
