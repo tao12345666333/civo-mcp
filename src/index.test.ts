@@ -2,12 +2,12 @@
 process.env.CIVO_API_KEY = 'test-api-key';
 
 // Import tools to test their definitions
-import { CREATE_INSTANCE_TOOL, LIST_INSTANCES_TOOL } from './tools/instances';
-import { LIST_DISK_IMAGES_TOOL, GET_DISK_IMAGE_TOOL } from './tools/disk-images';
-import { LIST_SIZES_TOOL } from './tools/sizes';
-import { LIST_REGIONS_TOOL } from './tools/regions';
-import { LIST_NETWORKS_TOOL, CREATE_NETWORK_TOOL } from './tools/networks';
-import { LIST_KUBERNETES_CLUSTERS_TOOL, CREATE_KUBERNETES_CLUSTER_TOOL } from './tools/kubernetes';
+import { CREATE_INSTANCE_TOOL, LIST_INSTANCES_TOOL } from './tools/instances.js';
+import { LIST_DISK_IMAGES_TOOL, GET_DISK_IMAGE_TOOL } from './tools/disk-images.js';
+import { LIST_SIZES_TOOL } from './tools/sizes.js';
+import { LIST_REGIONS_TOOL } from './tools/regions.js';
+import { LIST_NETWORKS_TOOL, CREATE_NETWORK_TOOL } from './tools/networks.js';
+import { LIST_KUBERNETES_CLUSTERS_TOOL, CREATE_KUBERNETES_CLUSTER_TOOL } from './tools/kubernetes.js';
 
 describe('Server Configuration', () => {
   it('should have all required tool definitions', () => {

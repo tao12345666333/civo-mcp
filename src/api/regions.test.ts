@@ -1,5 +1,5 @@
-import { listRegions } from './regions';
-import { CIVO_API_URL } from './civo';
+import { listRegions } from './regions.js';
+import { CIVO_API_URL } from './civo.js';
 
 jest.mock('./civo', () => ({
   ...jest.requireActual('./civo'),

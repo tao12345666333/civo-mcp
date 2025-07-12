@@ -1,5 +1,5 @@
-import { createInstance, listInstances } from './api/instances';
-import { listDiskImages } from './api/disk-images';
+import { createInstance, listInstances } from './api/instances.js';
+import { listDiskImages } from './api/disk-images.js';
 
 // Mock fetch
 global.fetch = jest.fn();

@@ -1,5 +1,5 @@
-import { listSizes } from './sizes';
-import { CIVO_API_URL } from './civo';
+import { listSizes } from './sizes.js';
+import { CIVO_API_URL } from './civo.js';
 
 jest.mock('./civo', () => ({
   ...jest.requireActual('./civo'),

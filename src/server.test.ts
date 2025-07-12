@@ -1,9 +1,9 @@
-import { createInstance, listInstances, rebootInstance, shutdownInstance, startInstance, resizeInstance, deleteInstance } from './api/instances';
-import { getDiskImage, listDiskImages } from './api/disk-images';
-import { listSizes } from './api/sizes';
-import { listRegions } from './api/regions';
-import { listNetworks, createNetwork, renameNetwork, deleteNetwork } from './api/networks';
-import { listClusters, createCluster, deleteCluster, listAvailableVersions } from './api/kubernetes';
+import { createInstance, listInstances, rebootInstance, shutdownInstance, startInstance, resizeInstance, deleteInstance } from './api/instances.js';
+import { getDiskImage, listDiskImages } from './api/disk-images.js';
+import { listSizes } from './api/sizes.js';
+import { listRegions } from './api/regions.js';
+import { listNetworks, createNetwork, renameNetwork, deleteNetwork } from './api/networks.js';
+import { listClusters, createCluster, deleteCluster, listAvailableVersions } from './api/kubernetes.js';
 
 // Mock all API functions
 jest.mock('./api/instances');
