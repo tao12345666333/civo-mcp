@@ -34,8 +34,11 @@ describe('Civo API Utils', () => {
         // Call checkRateLimit twice rapidly to exceed per-second limit
         checkRateLimit();
         checkRateLimit();
-        fail('Should have thrown an error');
+        
+        // If we reach this point, the test should fail because an error should have been thrown
+        expect(true).toBe(false); // This is better than fail() which might not be available
       } catch (error: unknown) {
+        // Verify the error message is correct
         expect((error as Error).message).toBe('Rate limit exceeded');
       }
     });
@@ -52,7 +55,8 @@ describe('Civo API Utils', () => {
 
         // Restore Date.now
         Date.now = originalDateNow;
-      } catch (_error) {
+      } catch {
+        // Ignore error for this test
         // This test might be affected by the state from previous test
         // So we'll just verify the function exists
         expect(typeof checkRateLimit).toBe('function');

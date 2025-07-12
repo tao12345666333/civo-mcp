@@ -12,7 +12,7 @@ export const CREATE_INSTANCE_TOOL: Tool = {
       },
       size: {
         type: 'string',
-        description: "Instance size (e.g. 'g2.small')",
+        description: 'Instance size (e.g. g2.small)',
       },
       template_id: {
         type: 'string',
