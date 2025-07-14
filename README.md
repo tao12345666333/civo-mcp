@@ -8,43 +8,162 @@
 
 An MCP server implementation that integrates with the [Civo cloud platform](https://www.civo.com) API, providing capabilities to manage cloud instances, networks, and Kubernetes clusters.
 
-## Installation
+## Demo
 
-### Quick Start with npx (Recommended)
-```bash
-# Run directly without installation
-npx civo-mcp
+![Civo MCP Demo](https://github.com/user-attachments/assets/ebf5f20a-3b60-4721-ae39-9a83765cd3b8)
 
-# Or use the command name
-npx mcp-server-civo
+Or you can also view the details of each step through [this public Amp thread](https://ampcode.com/threads/T-cb46a20f-7faf-4cc6-a929-9b248a92c3b5).
+
+## Getting Started
+
+### Requirements
+- Node.js 20 or newer
+- Claude Desktop, VS Code, Cursor, or any other MCP client
+- A Civo account with API key
+
+### Installation
+
+First, install the Civo MCP server with your client. A typical configuration looks like this:
+
+```json
+{
+  "mcpServers": {
+    "civo": {
+      "command": "npx",
+      "args": ["civo-mcp"],
+      "env": {
+        "CIVO_API_KEY": "YOUR_API_KEY_HERE"
+      }
+    }
+  }
+}
 ```
 
-### Global Installation
+<details>
+<summary><b>Install in VS Code</b></summary>
+
+You can install the Civo MCP server using the VS Code CLI:
+
 ```bash
-npm install -g civo-mcp
-mcp-server-civo
+# For VS Code
+code --add-mcp '{"name":"civo","command":"npx","args":["civo-mcp"],"env":{"CIVO_API_KEY":"YOUR_API_KEY_HERE"}}'
 ```
 
-### Local Installation
+After installation, the Civo MCP server will be available for use with your GitHub Copilot agent in VS Code.
+</details>
+
+<details>
+<summary><b>Install in Ampcode</b></summary>
+
+Follow Amp MCP [documentation](https://ampcode.com/manual#mcp). Use following configuration:
+
+```json
+"amp.mcpServers": {
+  "civo": {
+      "command": "npx",
+      "args": ["civo-mcp"],
+      "env": {
+        "CIVO_API_KEY": "YOUR_API_KEY_HERE"
+      }
+  }
+}
+```
+</details>
+
+<details>
+<summary><b>Install in Claude Code</b></summary>
+
+Use the Claude Code CLI to add the Civo MCP server:
+
 ```bash
-npm install civo-mcp
-npx mcp-server-civo
+claude mcp add civo npx civo-mcp
 ```
 
-### From Source
+Then set your API key as an environment variable:
 ```bash
-git clone https://github.com/tao12345666333/civo-mcp.git
-cd civo-mcp
-npm install
-npm run build
-node dist/index.js
+export CIVO_API_KEY="your_api_key_here"
 ```
+</details>
 
-### Using Docker
-```bash
-docker pull ghcr.io/tao12345666333/civo-mcp:latest
-docker run -e CIVO_API_KEY="your_api_key_here" ghcr.io/tao12345666333/civo-mcp:latest
+<details>
+<summary><b>Install in Gemini CLI</b></summary>
+
+Follow the MCP install [guide](https://github.com/google-gemini/gemini-cli/blob/main/docs/tools/mcp-server.md#configure-the-mcp-server-in-settingsjson), use following configuration:
+
+```json
+{
+  "mcpServers": {
+    "civo": {
+      "command": "npx",
+      "args": ["civo-mcp"],
+      "env": {
+        "CIVO_API_KEY": "YOUR_API_KEY_HERE"
+      }
+    }
+  }
+}
 ```
+</details>
+
+<details>
+<summary><b>Install in Cursor</b></summary>
+
+Go to `Cursor Settings` → `MCP` → `Add new MCP Server`. Name to your liking, use `command` type with the command `npx civo-mcp`. You can also verify config or add command like arguments via clicking `Edit`.
+
+```json
+{
+  "mcpServers": {
+    "civo": {
+      "command": "npx",
+      "args": ["civo-mcp"],
+      "env": {
+        "CIVO_API_KEY": "YOUR_API_KEY_HERE"
+      }
+    }
+  }
+}
+```
+</details>
+
+<details>
+<summary><b>Install in Windsurf</b></summary>
+
+Follow Windsurf MCP [documentation](https://docs.windsurf.com/windsurf/cascade/mcp). Use following configuration:
+
+```json
+{
+  "mcpServers": {
+    "civo": {
+      "command": "npx",
+      "args": ["civo-mcp"],
+      "env": {
+        "CIVO_API_KEY": "YOUR_API_KEY_HERE"
+      }
+    }
+  }
+}
+```
+</details>
+
+<details>
+<summary><b>Install in Claude Desktop</b></summary>
+
+Follow the MCP install [guide](https://modelcontextprotocol.io/quickstart/user), use following configuration:
+
+```json
+{
+  "mcpServers": {
+    "civo": {
+      "command": "npx",
+      "args": ["civo-mcp"],
+      "env": {
+        "CIVO_API_KEY": "YOUR_API_KEY_HERE"
+      }
+    }
+  }
+}
+```
+</details>
 
 ## Features
 
@@ -187,107 +306,6 @@ docker run -e CIVO_API_KEY="your_api_key_here" ghcr.io/tao12345666333/civo-mcp:l
 ### Getting an API Key
 1. Sign up for a [Civo account](https://dashboard.civo.com/signup) if you don't have one.
 2. Generate your API key following the [API keys documentation](https://www.civo.com/docs/account/api-keys)
-
-### Usage as a Standalone Server
-Install dependencies and run the server:
-```bash
-npm install
-npm run build
-CIVO_API_KEY="your_api_key_here" node dist/index.js
-```
-
-### Usage with Docker
-Run the server using Docker:
-```bash
-docker run -e CIVO_API_KEY="your_api_key_here" ghcr.io/tao12345666333/civo-mcp:latest
-```
-
-### Usage with Claude Desktop
-Add this to your `claude_desktop_config.json`:
-
-#### Using npx (Recommended)
-```json
-{
-  "mcpServers": {
-    "civo": {
-      "command": "npx",
-      "args": ["civo-mcp"],
-      "env": {
-        "CIVO_API_KEY": "YOUR_API_KEY_HERE"
-      }
-    }
-  }
-}
-```
-
-#### Using global installation
-```json
-{
-  "mcpServers": {
-    "civo": {
-      "command": "mcp-server-civo",
-      "env": {
-        "CIVO_API_KEY": "YOUR_API_KEY_HERE"
-      }
-    }
-  }
-}
-```
-
-#### Using local build
-```json
-{
-  "mcpServers": {
-    "civo": {
-      "command": "node",
-      "args": ["/path/to/civo-mcp/dist/index.js"],
-      "env": {
-        "CIVO_API_KEY": "YOUR_API_KEY_HERE"
-      }
-    }
-  }
-}
-```
-
-## Testing
-
-Run the following command to execute the test suite:
-```bash
-npm run test:ci
-```
-
-Generate test coverage reports:
-```bash
-npm run test:coverage
-```
-
-## Build
-
-Build the project using TypeScript:
-```bash
-npm run build
-```
-
-## Examples
-
-### Creating an Instance
-```bash
-# First, list available regions and sizes
-curl -s "https://api.civo.com/v2/regions" -H "Authorization: Bearer $CIVO_API_KEY"
-curl -s "https://api.civo.com/v2/sizes" -H "Authorization: Bearer $CIVO_API_KEY"
-
-# Then create an instance using the MCP server
-# This would be done through Claude Desktop or another MCP client
-```
-
-### Managing Kubernetes Clusters
-```bash
-# List available Kubernetes versions
-# Use the list_kubernetes_versions tool
-
-# Create a cluster
-# Use the create_kubernetes_cluster tool with required parameters
-```
 
 ## Contributing
 
