@@ -401,7 +401,14 @@ describe('Server Tool Handlers', () => {
 
     it('should handle list_kubernetes_versions tool', async () => {
       const mockVersions = [
-        { version: '1.23.5', label: '1.23.5', type: 'stable' },
+        { 
+          Version: '1.23.5', 
+          Label: '1.23.5', 
+          Type: 'stable',
+          Release: '1.23.5+k3s1',
+          Default: false,
+          ClusterType: 'k3s'
+        },
       ];
       mockListAvailableVersions.mockResolvedValue(mockVersions);
 

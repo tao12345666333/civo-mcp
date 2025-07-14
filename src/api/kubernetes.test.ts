@@ -78,7 +78,14 @@ describe('Kubernetes API', () => {
   });
 
   it('should list available versions', async () => {
-    const mockData = [{ version: '1.23.5', label: '1.23.5', type: 'stable' }];
+    const mockData = [{ 
+      Version: '1.23.5', 
+      Label: '1.23.5', 
+      Type: 'stable',
+      Release: '1.23.5+k3s1',
+      Default: false,
+      ClusterType: 'k3s'
+    }];
     (fetch as jest.Mock).mockResolvedValueOnce({
       ok: true,
       json: () => Promise.resolve(mockData),

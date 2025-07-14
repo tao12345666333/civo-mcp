@@ -83,7 +83,10 @@ export interface CivoKubernetesClusterList {
 }
 
 export interface CivoKubernetesVersion {
-  version: string;
-  label: string;
-  type: string;
+  Version: string;
+  Label: string;
+  Type: string;
+  Release: string;
+  Default: boolean;
+  ClusterType: string;
 }

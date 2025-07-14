@@ -549,7 +549,7 @@ server.setRequestHandler(CallToolRequestSchema, async request => {
       case 'list_kubernetes_versions': {
         const versions = await listAvailableVersions();
         const versionList = versions
-          .map((v: any) => `${v.version} - ${v.label} (${v.type})`)
+          .map((v: any) => `${v.Version} - ${v.Label} (${v.Type}) [${v.ClusterType}]${v.Default ? ' *DEFAULT*' : ''}`)
           .join('\n');
 
         return {
