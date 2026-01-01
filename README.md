@@ -8,6 +8,10 @@
 
 An MCP server implementation that integrates with the [Civo cloud platform](https://www.civo.com) API, providing capabilities to manage cloud instances, networks, and Kubernetes clusters.
 
+<a href="https://glama.ai/mcp/servers/@tao12345666333/civo-mcp">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@tao12345666333/civo-mcp/badge" alt="Civo Server MCP server" />
+</a>
+
 ## Demo
 
 ![Civo MCP Demo](https://github.com/user-attachments/assets/ebf5f20a-3b60-4721-ae39-9a83765cd3b8)
